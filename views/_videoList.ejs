@@ -1,0 +1,17 @@
+<% audioList.forEach(audio => {%>
+<div class="posts">
+  <div class="post-thumb">
+    <img src="<%=audio.thumbnail%>" />
+  </div>
+  <div class="post-content">
+    <strong><%=audio.title%></strong><br />
+    Duration: <%=audio.length%>
+    <form action="/play" method="post">
+      <input type="hidden" name="play" value="<%=audio.audioID%>" />
+      <button class="btn-play" type="submit" onclick="showLoader()">
+        <img src="/images/play.png" height="65px" width="70px" />
+      </button>
+    </form>
+  </div>
+</div>
+<% })%> <%- include('_LoadingScreen')%>

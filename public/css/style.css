@@ -1,0 +1,271 @@
+body {
+  background: #fff;
+}
+
+.navbar {
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  width: 333px;
+  height: 60px;
+  border-radius: 4px;
+}
+.navbar-head {
+  background: #444444;
+  color: #fff;
+  margin-bottom: 4px;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Reem Kufi", sans-serif;
+}
+.music-card {
+  margin: 2px auto;
+  background: #fff;
+  box-shadow: 0px 8px 28px -9px rgba(0, 0, 0, 0.45);
+  overflow: hidden;
+  position: relative;
+  width: 330px;
+  height: 400px;
+  border-radius: 4px;
+  border: 1px solid #7d7c7a;
+}
+
+.image {
+  background-size: cover;
+  position: absolute;
+  z-index: 1;
+  opacity: 0.3;
+  height: 250px;
+  width: 330px;
+}
+
+.image:after {
+  height: 100px;
+  content: "";
+  top: 200px;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  background: linear-gradient(rgba(9, 2, 4, 0), #444);
+}
+
+.searchbox input {
+  border: 1px solid #7d7c7a;
+  padding: 14px 18px;
+  padding-right: 15px;
+  width: 86.2%;
+  background: none;
+  outline: none;
+  font-size: 18px;
+  margin-top: 2px;
+}
+
+.footer {
+  margin: auto;
+  margin-top: 8px;
+  margin-bottom: 10px;
+  background: #444444;
+  color: #f1f1f1;
+  box-shadow: 0px 8px 28px -9px rgba(0, 0, 0, 0.45);
+  overflow: hidden;
+  padding: 12px 0;
+  position: relative;
+  width: 330px;
+  height: 20px;
+  text-align: center;
+  border: 1px solid #7d7c7a;
+  border-radius: 4px;
+}
+
+.posts {
+  border: 1px solid #7d7c7a;
+  margin: 5px auto;
+  padding: 10px 10px;
+  overflow: auto;
+  border-radius: 4px;
+  width: 310px;
+}
+
+.post-thumb {
+  float: left;
+}
+.post-thumb img {
+  display: block;
+  height: 100px;
+  width: 100px;
+}
+.post-content {
+  text-align: left;
+  margin-left: 130px;
+}
+
+.icon {
+  padding: 1px;
+  border: 1px solid #7d7c7a;
+  border-radius: 4px;
+  margin-right: 15px;
+  margin-top: 2px;
+  height: 50px;
+  width: 50px;
+}
+
+.Column {
+  display: table-cell;
+}
+
+.btn {
+  margin-left: 5px;
+  margin-right: 5px;
+  display: inline-block;
+  background: #444444;
+  padding: 0.5rem;
+  border: 1px solid #1a1814;
+  color: #f1f1f1;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 1em;
+  min-width: 160px;
+  width: auto;
+  -webkit-appearance: none;
+}
+
+.btn-play {
+  background: none;
+  border: none;
+  margin-top: 3px;
+  padding: 0px 0px;
+}
+
+.btn_search {
+  -webkit-appearance: none;
+  display: none;
+}
+
+.wave {
+  position: absolute;
+  height: 750px;
+  width: 750px;
+  opacity: 0.6;
+  left: 0;
+  top: 0;
+  margin-left: -70%;
+  margin-top: -140%;
+  background: radial-gradient(#353535, #383737);
+}
+
+.wave:nth-child(2),
+.wave:nth-child(3) {
+  top: 10px;
+}
+
+.playing .wave {
+  border-radius: 40%;
+  animation: wave 3300ms infinite linear;
+}
+/* when stop */
+.wave {
+  border-radius: 40%;
+  animation: wave 55s infinite linear;
+}
+
+.playing .wave:nth-child(2) {
+  animation-duration: 4000ms;
+}
+/* when stop */
+.wave:nth-child(2) {
+  animation-duration: 50s;
+}
+
+.playing .wave:nth-child(3) {
+  animation-duration: 5000ms;
+}
+/* when stop */
+.wave:nth-child(3) {
+  animation-duration: 45s;
+}
+
+.info {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.title {
+  font-size: 1.4em;
+  font-weight: 400;
+  color: #333;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  font-family: "Reem Kufi", sans-serif;
+}
+
+.artist {
+  color: #cfcfcf;
+  font-size: 1.2em;
+  letter-spacing: 0.08em;
+  font-family: "Reem Kufi", sans-serif;
+  margin-top: -10px;
+}
+
+.fa {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  color: #555;
+}
+
+.fa-play {
+  display: none;
+}
+
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid blue;
+  border-right: 16px solid green;
+  border-bottom: 16px solid red;
+  border-left: 16px solid maroon;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

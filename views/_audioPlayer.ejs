@@ -1,0 +1,57 @@
+<div class="music-card playing">
+  <div class="image" style="background: url(<%=audio.image%>) no-repeat 75%;"> </div>
+
+  <div class="wave"></div>
+  <div class="wave"></div>
+  <div class="wave"></div>
+
+  <div class="info">
+    <h2 class="title"> <marquee behavior="scroll" direction="left" scrollamount="15">
+        <%=audio.title%>
+      </marquee>
+    </h2>
+    <div class="artist"><%=audio.length%></div>
+  </div>
+
+  <i class="fa fa-pause trigger" aria-hidden="true"></i>
+  <i class="fa fa-play trigger" aria-hidden="true"></i>
+</div>
+
+
+<center>
+  <div class="Column"> <input type="button" class="btn" value="<< Prev" onclick="history.go(-1)" /> </div>
+  <div class="Column">
+    <form action="/play" method="post" name="next">
+      <input type="hidden" name="play" value="<%=audio.related%>" />
+      <input type="submit" class="btn" value="Next >>" onclick="showLoader()" />
+    </form>
+  </div>
+</center>
+
+
+<script>
+  let audio = new Audio("/play/<%=audio.audioID%>");
+
+  audio.autoplay = true;
+
+  $(".trigger").click(function () {
+    if (audio.paused == false) {
+      audio.pause();
+      $(".fa-play").show();
+      $(".fa-pause").hide();
+      $(".music-card").removeClass("playing");
+    } else {
+      audio.play();
+      $(".fa-pause").show();
+      $(".fa-play").hide();
+      $(".music-card").addClass("playing");
+    }
+  });
+  audio.addEventListener("ended", myHandler, false);
+  function myHandler(e) {
+    document.next.submit();
+    showLoader();
+  }
+</script>
+
+<%- include('_loadingScreen')%>
