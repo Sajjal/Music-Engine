@@ -40,7 +40,7 @@ As they say, better late than never; and here it is.
 
 1. Clone this Project.
 2. Go to modules --> **downloadVideoAsMp3.js**
-3. Edit the path to **ffmpeg** on `line 42`
+3. Edit the path to **ffmpeg** on `line 42`  Type `which ffmpeg` on terminal to find the path of ffmpeg.
 4. Open terminal/command-prompt. **cd** to project directory and type:
 
    i. `npm install`
