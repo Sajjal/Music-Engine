@@ -51,7 +51,6 @@ async function scrape_youtube(keyword) {
 
     if (videoArr.length == 3) {
       videos = [];
-      console.log(videoArr);
       return videoArr;
     }
     count++;
