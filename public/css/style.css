@@ -1,5 +1,5 @@
 body {
-  background: #fff;
+  background: #dfe1e8;
 }
 
 .navbar {
@@ -20,7 +20,7 @@ body {
 }
 .music-card {
   margin: 2px auto;
-  background: #fff;
+  background: #dfe1e8;
   box-shadow: 0px 8px 28px -9px rgba(0, 0, 0, 0.45);
   overflow: hidden;
   position: relative;
@@ -203,7 +203,7 @@ body {
 }
 
 .artist {
-  color: #cfcfcf;
+  color: #757876;
   font-size: 1.2em;
   letter-spacing: 0.08em;
   font-family: "Reem Kufi", sans-serif;
