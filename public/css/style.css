@@ -107,6 +107,7 @@ body {
   margin-top: 2px;
   height: 50px;
   width: 50px;
+  cursor: pointer;
 }
 
 .Column {
@@ -128,13 +129,15 @@ body {
   min-width: 160px;
   width: auto;
   -webkit-appearance: none;
+  outline: none;
 }
 
 .btn-play {
   background: none;
   border: none;
   margin-top: 3px;
-  padding: 0px 0px;
+  padding: 0px 25px;
+  outline: none;
 }
 
 .btn_search {
@@ -223,24 +226,14 @@ body {
   display: none;
 }
 
-#loader {
+.loading {
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 20%;
   z-index: 1;
   width: 150px;
   height: 150px;
-  margin: -75px 0 0 -75px;
-  border: 16px solid #f3f3f3;
-  border-radius: 50%;
-  border-top: 16px solid blue;
-  border-right: 16px solid green;
-  border-bottom: 16px solid red;
-  border-left: 16px solid maroon;
-  width: 120px;
-  height: 120px;
-  -webkit-animation: spin 2s linear infinite;
-  animation: spin 2s linear infinite;
+  margin: -75px 0 0 -95px;
 }
 
 @keyframes wave {

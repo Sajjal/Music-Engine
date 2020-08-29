@@ -1,5 +1,5 @@
 {
-  "name": "youtube-stream",
+  "name": "music-engine",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -7,7 +7,7 @@
     "start": "node server.js"
   },
   "keywords": [],
-  "author": "Sajjal Neupane",
+  "author": "Sajjal Neupane {https://mrsajjal.com}",
   "license": "ISC",
   "dependencies": {
     "ejs": "^3.1.3",
@@ -16,5 +16,6 @@
     "scrape-yt": "^1.4.0",
     "youtube-mp3-downloader": "^0.6.8",
     "ytdl-core": "^2.1.7"
-  }
+  },
+  "devDependencies": {}
 }

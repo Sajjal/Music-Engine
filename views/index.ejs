@@ -6,11 +6,30 @@
     <title>S & D Music Engine</title>
     <link rel="shortcut icon" href="/images/icon.png" />
     <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
     <script src="/js/jquery-mini.js"></script>
   </head>
   <body>
     <div class="navbar navbar-head"><h3>S & D Music Engine</h3></div>
-    <%-include('_navbar')%> <%-include('_videoList')%>
+    <form id="form">
+      <div class="navbar">
+        <div align="left">
+          <img class="icon" id="gotoHome" src="/images/home.png" />
+          <div class="searchbox" style="float: right; width: 255px">
+            <input type="text" name="search" placeholder="   🔎    Search..." />
+          </div>
+        </div>
+      </div>
+      <input type="submit" class="btn_search" value="" />
+    </form>
+
+    <div id="error" class="posts" style="display: none">No Results Found! Please Try Again!</div>
+    <div id="audioList"></div>
+    <div id="audioPlayer" style="display: none"></div>
+    <div class="loading" id="loading" style="display: none"><img src="/images/loading.svg" /></div>
     <div class="footer">S & D Music Engine | github: @Sajjal</div>
+
+    <script src="/js/ejs.min.js"></script>
+    <script src="/js/viewController.js"></script>
   </body>
 </html>

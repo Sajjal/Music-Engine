@@ -18,6 +18,7 @@ mongoose.connect("mongodb://localhost/audioDB", {
   useCreateIndex: true,
 });
 
+app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 let port = process.env.PORT || 3400;
@@ -25,9 +26,13 @@ let port = process.env.PORT || 3400;
 app.use("/", musicRouter);
 
 app.get("*", async function (req, res) {
+  return res.render("index");
+});
+
+app.post("/", async (req, res) => {
   let randomAudio = await randomText.suggestRandomString();
   let audioList = await scrape_youtube(randomAudio);
-  res.render("index", { audioList: audioList });
+  return res.json({ result: audioList });
 });
 
 app.listen(port, function () {

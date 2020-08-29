@@ -6,19 +6,18 @@ const fs = require("fs");
 const assets = "public/assets";
 
 router
-  .get("/search", (req, res) => {
-    res.redirect("/");
-  })
   .post("/search", async (req, res) => {
     let searchText = req.body.search.toLowerCase();
     let audioList = await scrape_youtube(searchText);
-    res.render("index", { audioList: audioList });
+    return res.json({ result: audioList });
+    //res.render("index", { audioList: audioList });
   })
   .post("/play", async (req, res) => {
     let audioID = req.body.play;
     await streamAudio(audioID);
     let audio = await dbOperation(audioID);
-    res.render("play", { audio: audio });
+    return res.json({ audio: audio });
+    //return res.render("play", { audio: audio });
   });
 
 /****************** Stream Audio *********************/
